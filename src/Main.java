@@ -1,27 +1,24 @@
 public class Main {
 
     public static void main(String[] args) {
-        AcousticGuitar yamahaF310 = new AcousticGuitar();
-        ElectricGuitar fenderStratocaster = new ElectricGuitar();
-        ElectroAcousticGuitar fenderStratoAcoustic = new ElectroAcousticGuitar();
+        AcousticGuitar yamahaF310 = AcousticGuitar.createGuitar(6,"symmetrical");
+        ElectricGuitar fenderStratocaster = ElectricGuitar.createGuitar(6,"strat");
+        AcousticGuitar gibsonAcoustic = AcousticGuitar.createGuitar(12,"asymmetrical");
 
         System.out.println("---=== Acoustic Guitar ===---");
-        yamahaF310.setGuitarStrings(6);
-        yamahaF310.setBodyForm("symmetrical");
-        yamahaF310.printStatus();
+        yamahaF310.getStatus();
+        yamahaF310.play();
 
         System.out.println("---=== Electric Guitar ===---");
-        fenderStratocaster.setGuitarStrings(6);
-        fenderStratocaster.setBodyForm("strat");
-        fenderStratocaster.printStatus();
-        fenderStratocaster.volContr.changeVolume(2);
-        fenderStratocaster.printStatus();
+        fenderStratocaster.getStatus();
+        fenderStratocaster.volContr.incVolume();
+        fenderStratocaster.volContr.incTone();
+        fenderStratocaster.getStatus();
+        fenderStratocaster.play();
 
-        System.out.println("---=== ElectroAcoustic Guitar ===---");
-        fenderStratoAcoustic.setGuitarStrings(6);
-        fenderStratoAcoustic.setBodyForm("asymmetrical");
-        fenderStratoAcoustic.volContr.changeVolume(5);
-        fenderStratoAcoustic.printStatus();
+        System.out.println("---=== Acoustic Guitar ===---");
+        gibsonAcoustic.getStatus();
+        gibsonAcoustic.play();
 
     }
 }

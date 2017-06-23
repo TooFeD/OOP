@@ -1,16 +1,14 @@
-public class AcousticGuitar implements Guitar {
-    String body;
-    int guitarStrings;
+public class AcousticGuitar extends Guitar {
 
-    public void setGuitarStrings(int countStrings){
-        guitarStrings = countStrings;
+    private AcousticGuitar(int countStrings, String bodyForm) {
+        super(countStrings, bodyForm);
     }
 
-    public void setBodyForm(String bodyForm){
-        body = bodyForm;
+    public static AcousticGuitar createGuitar(int countStrings, String bodyForm) {
+        return new AcousticGuitar(countStrings, bodyForm);
     }
 
-    public void printStatus(){
-        System.out.println("countStrings:" + guitarStrings + " bodyForm:" + body);
+    public void getStatus(){
+        System.out.println("countStrings:" + getStrings() + " bodyForm:" + getBody());
     }
 }

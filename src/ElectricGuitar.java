@@ -1,18 +1,27 @@
-public class ElectricGuitar implements Guitar {
-    String body;
-    int guitarStrings;
-    public VolumeController volContr = new VolumeController(1,1);
+public class ElectricGuitar extends Guitar {
 
-    public void setGuitarStrings(int countStrings){
-        guitarStrings = countStrings;
+    public VolumeController volContr = new VolumeController();
+
+    private ElectricGuitar(int countStrings, String bodyForm) {
+        super(countStrings, bodyForm);
+    }
+//    @Override
+//    public ElectricGuitar(int countStrings, String bodyForm) {
+//        this(guitarStrings = countStrings,body=bodyForm);
+//    }
+
+
+    public static ElectricGuitar createGuitar(int countStrings, String bodyForm) {
+        return new ElectricGuitar(countStrings, bodyForm);
     }
 
-    public void setBodyForm(String bodyForm){
-        body = bodyForm;
-    }
-
-    public void printStatus(){
+    public void getStatus(){
         volContr.pickup.setSound();
-        System.out.println("countStrings:" + guitarStrings + " bodyForm:" + body + " volume = " + volContr.getVolume() + " sound = " + volContr.pickup.getSound());
+        System.out.println("countStrings:" + getStrings() + " bodyForm:" + getBody() + " volume = " + volContr.getVolume() + " sound = " + volContr.pickup.getSound());
+    }
+
+    @Override
+    public void play(){
+        System.out.println("Вжж вжж вжжжжж)");
     }
 }
