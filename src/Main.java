@@ -5,18 +5,20 @@ public class Main {
         ElectricGuitar fenderStratocaster = ElectricGuitar.createGuitar(6,"strat");
         AcousticGuitar gibsonAcoustic = AcousticGuitar.createGuitar(12,"asymmetrical");
 
-        System.out.println("---=== Acoustic Guitar ===---");
+        System.out.println("---=== Acoustic Guitar Yamaha F310 ===---");
         yamahaF310.getStatus();
         yamahaF310.play();
 
-        System.out.println("---=== Electric Guitar ===---");
-        fenderStratocaster.getStatus();
+        System.out.println("---=== Electric Guitar Fender Stratocaster ===---");
+        fenderStratocaster.play();
         fenderStratocaster.volContr.incVolume();
+        fenderStratocaster.volContr.incVolume();
+        fenderStratocaster.getStatus();
+        fenderStratocaster.volContr.decVolume();
         fenderStratocaster.volContr.incTone();
         fenderStratocaster.getStatus();
-        fenderStratocaster.play();
 
-        System.out.println("---=== Acoustic Guitar ===---");
+        System.out.println("---=== Acoustic Guitar Gibson ===---");
         gibsonAcoustic.getStatus();
         gibsonAcoustic.play();
 

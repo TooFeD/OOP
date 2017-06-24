@@ -7,6 +7,7 @@ public class VolumeController {
     private static final int MAX_VOLUME_TONE = 10;
     private int volume = 0;
     private int tone = 0;
+
     public Pickup pickup = new Pickup();
 
     public void incVolume(){
