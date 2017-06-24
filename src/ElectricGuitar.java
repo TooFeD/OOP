@@ -15,8 +15,8 @@ public class ElectricGuitar extends Guitar {
     }
 
     @Override
-    public void play(){
+    public String play(){
         volContr.pickup.setSound();
-        System.out.println("Вжж вжж вжжжжж)");
+        return "Вжж вжж вжжжжж";
     }
 }

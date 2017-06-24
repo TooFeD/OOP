@@ -18,8 +18,8 @@ public abstract class Guitar implements Instruments{
         return body;
     }
 
-    public void play (){
-        System.out.println("До ре ми");
+    public String play (){
+        return "До ре ми";
     }
 /*
 static Guitar createGuitar(int guitarStrings, String body) {
